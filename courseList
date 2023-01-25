@@ -1,0 +1,35 @@
+ {
+    "status": 200,
+    "data": [
+      {
+        "id": "1",
+        "image": "https://raw.githubusercontent.com/Sanjaymaliya/EducationAssets/main/ic_cemera.png",
+        "title": "Photography",
+        "count": "16"
+      },
+      {
+        "id": "1",
+        "image": "https://raw.githubusercontent.com/Sanjaymaliya/EducationAssets/main/ic_groups.png",
+        "title": "Data Science",
+        "count": "12"
+      },
+      {
+        "id": "1",
+        "image": "https://raw.githubusercontent.com/Sanjaymaliya/EducationAssets/main/ic_mobile.png",
+        "title": "UI/UX Design",
+        "count": "10"
+      },
+      {
+        "id": "1",
+        "image": "https://raw.githubusercontent.com/Sanjaymaliya/EducationAssets/main/ic_cemera.png",
+        "title": "Devlopment",
+        "count": "6"
+      },
+      {
+        "id": "1",
+        "image": "https://raw.githubusercontent.com/Sanjaymaliya/EducationAssets/main/ic_mobile.png",
+        "title": "Marketing",
+        "count": "4"
+      }
+    ]
+  }
