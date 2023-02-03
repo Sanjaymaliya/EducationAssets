@@ -1,0 +1,231 @@
+ {
+    "status": 200,
+    "data": [
+      {
+        "id": 1,
+        "name": "Course Category",
+        "type": "category",
+        "sub_data": [
+          {
+            "id": "1",
+            "title": "Design"
+          },
+          {
+            "id": "1",
+            "title": "Business"
+          },
+          {
+            "id": "1",
+            "title": "Music"
+          },
+          {
+            "id": "1",
+            "title": "Devlopment"
+          },
+          {
+            "id": "1",
+            "title": "Marketing"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Recommeded for you",
+        "type": "banner",
+        "sub_data": [
+          {
+            "id": "1",
+            "title": "Flutter Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Avinash Jain, The Codex",
+            "price": "10,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "Learn Python: The Complete Python Programming Course",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/lakewood_wooden_swing_set_App_En.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "5,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "The Flutter Complete Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/SQUISHMALLOWS_App_En_1.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Jose Portilla",
+            "price": "7,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "2,525",
+            "sellerType": "Bestseller"
+          }
+
+        ]
+      },
+
+      {
+        "id": 1,
+        "name": "Recommeded for you",
+        "type": "course",
+        "sub_data": [
+          {
+            "id": "1",
+            "title": "Flutter Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "15,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "Learn Python: The Complete Python Programming Course",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/lakewood_wooden_swing_set_App_En.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "15,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "The Flutter Complete Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/SQUISHMALLOWS_App_En_1.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "15,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "15,525",
+            "sellerType": "Bestseller"
+          }
+
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Top Course in Business",
+        "type": "course",
+        "sub_data": [
+          {
+            "id": "1",
+            "title": "Javascript for Beginners",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/outdoor_Gymset_App_En.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "1,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "Web Development Masterclass & Certifications",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/Marketing_App.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Jose Portilla",
+            "price": "2,525",
+            "sellerType": "Bestseller"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Recommeded for you",
+        "type": "banner",
+        "sub_data": [
+          {
+            "id": "1",
+            "title": "Flutter Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Avinash Jain, The Codex",
+            "price": "10,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "Learn Python: The Complete Python Programming Course",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/lakewood_wooden_swing_set_App_En.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "5,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "The Flutter Complete Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/SQUISHMALLOWS_App_En_1.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Jose Portilla",
+            "price": "7,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "2,525",
+            "sellerType": "Bestseller"
+          }
+
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Top Course in Development",
+        "type": "course",
+        "sub_data": [
+          {
+            "id": "1",
+            "title": "Flutter Dart The Complete Guide",
+            "image": "https://alpha.fantasyworldtoys.com/media/catalog/category/bg3.jpg",
+            "rating": 4.5,
+            "ratCount": "57,500",
+            "authorName": "Jose Portilla",
+            "price": "1,525",
+            "sellerType": "Bestseller"
+          },
+          {
+            "id": "1",
+            "title": "The Complete 2020 Fullstack Web Developer Course",
+            "image": "https://alpha.fantasyworldtoys.com/media/mobilesuite/banner/new_year_banner_App.jpg",
+            "rating": 3.5,
+            "ratCount": "57,500",
+            "authorName": "Academinf by Maximillain",
+            "price": "3,525",
+            "sellerType": "Bestseller"
+          }
+        ]
+      }
+    ]
+  }
