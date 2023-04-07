@@ -9,7 +9,7 @@
       "title": "What is Lorem Ipsum?",
       "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when ",
       "likes": "10k",
-      "isSave": true,
+      "isSave": false,
       "share": "10k",
       "view": "2k",
       "userPhoto": "https://s3.ap-south-1.amazonaws.com/jaindirect.bluerose.solutions/1097/64266c89a9555_education2.jpg",
