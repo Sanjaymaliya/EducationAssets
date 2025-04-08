@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .form-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 73%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .template-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .circle-preview {
+            position: absolute;
+            width: 38%;
+            height: 38%;
+            border-radius: 50%;
+            overflow: hidden;
+            top: 40%;
+            left: 26%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .circle-preview {
+                width: 38%;
+        height: 38%;
+        left: 26%;
+        top: 40%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .circle-preview {
+                width: 40%;
+        height: 40%;
+        left: 26%;
+        top: 41%;
+            }
+        }
+        .navbar {
+    min-height: 100px;
+}
+.supported-by-text {
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+    color: #711717;
+    font-weight: bold;
+    font-size: 18px;
+    top: 80%;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.2;
+    display: none; /* Hide initially */
+}
+footer.fixed-footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    line-height: 70px;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="https://raw.githubusercontent.com/vinay-brt/generate_dp/main/header_logo.png" alt="Logo" height="120"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="form-container">
+        <form id="imageForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Supported by</label>
+                        <input type="text" class="form-control" id="supportedBy" placeholder="Enter name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="imageInput" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Generate Image</button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="image-wrapper">
+                        <img src="https://raw.githubusercontent.com/vinay-brt/generate_dp/main/new_frame.jpeg" class="template-image" alt="Template Image">
+                        <div class="circle-preview" id="circlePreview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="text-center mt-3">
+            <button id="downloadBtn" class="btn btn-success" style="display: none;">Download Image</button>
+        </div>
+        <canvas id="finalCanvas" style="display: none;"></canvas>
+    </div>
+</div>
+<footer class="fixed-footer">
+    Powered by <strong><a href="https://www.jaindirect.org" target="_blank" style="text-decoration: none; color: inherit;">www.jaindirect.org</a></strong>
+</footer>
+
+<script>
+    const imageInput = document.getElementById('imageInput');
+    const circlePreview = document.getElementById('circlePreview');
+    const imageForm = document.getElementById('imageForm');
+    const supportedByInput = document.getElementById('supportedBy');
+    const supportedByText = document.createElement('div');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const canvas = document.getElementById('finalCanvas');
+    const ctx = canvas.getContext('2d');
+
+    supportedByText.className = "supported-by-text";
+    let uploadedImageDataUrl = null;
+    let templateImageSrc = "";
+
+    document.querySelector(".image-wrapper").appendChild(supportedByText);
+
+    // Show text in real-time
+    supportedByInput.addEventListener('input', function () {
+        supportedByText.textContent = this.value;
+    });
+
+    // Read uploaded image
+    imageInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                uploadedImageDataUrl = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    imageForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const supportedByValue = supportedByInput.value.trim();
+        if (!supportedByValue) {
+            alert("Please enter a valid 'Supported by' name.");
+            return;
+        }
+
+        if (!uploadedImageDataUrl) {
+            alert("Please upload an image first.");
+            return;
+        }
+
+        supportedByText.textContent = supportedByValue;
+        supportedByText.style.display = "block";
+        circlePreview.innerHTML = `<img src="${uploadedImageDataUrl}" alt="Preview">`;
+
+        downloadBtn.style.display = 'inline-block';
+
+        // Draw canvas only after both images are loaded
+        loadImagesAndDrawCanvas(templateImageSrc, uploadedImageDataUrl, supportedByValue);
+    });
+
+    function loadImagesAndDrawCanvas(templateSrc, userImageSrc, text) {
+        const templateImg = new Image();
+        const userImg = new Image();
+
+        let loadedCount = 0;
+
+        const checkAndDraw = () => {
+            loadedCount++;
+            if (loadedCount === 2) {
+                drawCanvas(templateImg, userImg, text);
+            }
+        };
+
+        templateImg.onload = checkAndDraw;
+        userImg.onload = checkAndDraw;
+
+        templateImg.src = templateSrc;
+        userImg.src = userImageSrc;
+    }
+
+    function drawCanvas(templateImg, userImg, text) {
+// Ensure canvas matches the template's dimensions
+canvas.width = templateImg.naturalWidth;
+canvas.height = templateImg.naturalHeight;
+        console.log("canvas.width",canvas.width)
+        console.log("canvas.height",canvas.height)
+// Clear previous drawings
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+// Draw the template image
+ctx.drawImage(templateImg, 0, 0, canvas.width, canvas.height);
+
+// Circle Position (Adjust as per template)
+const circleX = canvas.width * 0.250;  // X position of circle center
+const circleY = canvas.height * 0.400; // Y position of circle center
+const circleRadius = canvas.width * 0.200; // Adjust radius
+console.log("circleX",circleX)
+console.log("circleY",circleY)
+
+// Clip and draw the user image within the circle
+ctx.save();
+ctx.beginPath();
+ctx.arc(circleX, circleY, circleRadius, 0, Math.PI * 2);
+ctx.closePath();
+ctx.clip();
+
+// Adjust image size to fit the circle properly
+ctx.drawImage(userImg, circleX - circleRadius, circleY - circleRadius, circleRadius * 2, circleRadius * 2);
+
+ctx.restore();
+
+// Draw "Supported by" text
+ctx.font = `bold ${canvas.width * 0.05}px Arial`;
+ctx.fillStyle = "#711717";
+ctx.textAlign = "center";
+
+ctx.fillText(text, canvas.width / 2, canvas.height * 0.85);
+}
+
+
+
+    downloadBtn.addEventListener('click', function () {
+        const link = document.createElement('a');
+        link.download = 'generated-image.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
+</script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
